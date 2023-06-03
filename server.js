@@ -4,6 +4,8 @@ const app = express();
 
 // setup static and middleware
 app.use(express.static('./public'))
+app.set('views', './view');
+app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
     res.sendFile(path.resolve(__dirname, './home.html'))
