@@ -2,19 +2,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" type="text/css" href="../public/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
   </head>
   <body>
-    <header>
+    <div id="allPage">
+      <h1 id="title"><%= title %></h1>
+      <img src="logo.png" alt="logo" height="150" />
       <nav>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/projects">Projects</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <a id="navigation" href="/">Home</a>
+          <a id="navigation" href="/about">About</a>
+          <a id="navigation" href="/projects">Projects</a>
+          <a id="navigation" href="/services">Services</a>
+          <a id="navigation" href="/contact">Contact</a>
         </ul>
       </nav>
-    </header>
+    </div>
   </body>
 </html>

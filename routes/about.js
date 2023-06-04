@@ -5,5 +5,4 @@ router.get('/', (req, res) => {
     res.render('about', {title : 'About me'});
 })
 
-
 module.exports = router;

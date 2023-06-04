@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <h1><%= title %>!</h1>
+    <title>Projects</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
   </head>
   <body>
-    <%- include('../partials/header.ejs') %>
-    <!-- Include the header file -->
-    <h1>projects</h1>
+    <div id="allPage">
+      <%- include('../partials/header.ejs') %> <%-
+      include('../partials/content.ejs') %> <%-
+      include('../partials/footer.ejs') %>
+    </div>
   </body>
 </html>
