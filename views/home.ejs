@@ -6,9 +6,15 @@
   </head>
   <body>
     <div id="allPage">
-      <%- include('../partials/header.ejs') %> <%-
-      include('../partials/content.ejs') %> <%-
-      include('../partials/footer.ejs') %>
+      <%- include('partials/header.ejs') %>
+      <h2>Welcome to my page.</h2>
+
+      <p>Mission Statement:</p>
+      <p>Be a good man</p>
+
+      <h2>Please check out my details!</h2>
+      <a href="/about">About me</a>
+      <%-include('partials/footer.ejs') %>
     </div>
   </body>
 </html>

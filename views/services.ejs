@@ -6,9 +6,17 @@
   </head>
   <body>
     <div id="allPage">
-      <%- include('../partials/header.ejs') %> <%-
-      include('../partials/content.ejs') %> <%-
-      include('../partials/footer.ejs') %>
+      <%- include('partials/header.ejs') %>
+      <header>
+        <h2>Services</h2>
+      </header>
+
+      <ul class="services-list">
+        <li>General Programming</li>
+        <li>Web Development</li>
+        <li>Mobile Apps</li>
+      </ul>
+      <%- include('partials/footer.ejs') %>
     </div>
   </body>
 </html>

@@ -33,3 +33,17 @@ body {
 h2 {
     color: #B9AC93;
 }
+
+.about_container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 380px 100px;
+}
+
+
+label {
+    width: 180px;
+    float: left;
+    text-align: left;
+    clear: both;
+}

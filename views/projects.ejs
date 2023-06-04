@@ -6,9 +6,46 @@
   </head>
   <body>
     <div id="allPage">
-      <%- include('../partials/header.ejs') %> <%-
-      include('../partials/content.ejs') %> <%-
-      include('../partials/footer.ejs') %>
+      <%- include('partials/header.ejs') %>
+
+      <h2>Projects</h2>
+
+      <div class="project">
+        <img src="project1.jpg" alt="Project 1" />
+        <h3>Project 1</h3>
+        <p>
+          Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Duis auctor urna sit amet erat consequat, eget aliquam elit auctor.
+          Integer vitae iaculis est.
+        </p>
+        <p>Role: Lorem ipsum dolor sit amet</p>
+        <p>Outcome: Lorem ipsum dolor sit amet</p>
+      </div>
+
+      <div class="project">
+        <img src="project2.jpg" alt="Project 2" />
+        <h3>Project 2</h3>
+        <p>
+          Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Duis auctor urna sit amet erat consequat, eget aliquam elit auctor.
+          Integer vitae iaculis est.
+        </p>
+        <p>Role: Lorem ipsum dolor sit amet</p>
+        <p>Outcome: Lorem ipsum dolor sit amet</p>
+      </div>
+
+      <div class="project">
+        <img src="project3.jpg" alt="Project 3" />
+        <h3>Project 3</h3>
+        <p>
+          Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Duis auctor urna sit amet erat consequat, eget aliquam elit auctor.
+          Integer vitae iaculis est.
+        </p>
+        <p>Role: Lorem ipsum dolor sit amet</p>
+        <p>Outcome: Lorem ipsum dolor sit amet</p>
+      </div>
+      <%- include('partials/footer.ejs') %>
     </div>
   </body>
 </html>
