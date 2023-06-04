@@ -8,43 +8,52 @@
     <div id="allPage">
       <%- include('partials/header.ejs') %>
 
-      <h2>Projects</h2>
+      <main>
+        <div class="projects_container">
+          <div>
+            <br />
+            <img src="project1.png" alt="property1" width="350" height="240" />
+          </div>
+          <div>
+            <h2>Dynamic Album</h2>
+            <p>
+              Using a dynamic way to show photos. When clicking the arrow
+              button, the photos will start moving left or right. Also, when
+              clicking the start button, photos will automatically moving.
+            </p>
+          </div>
+          <div>
+            <br />
+            <img src="project2.png" alt="property2" width="350" height="240" />
+          </div>
+          <div>
+            <h2>Bug Samasher</h2>
+            <p>
+              The game features a bug that randomly moves within the game area
+              at regular intervals. The objective for the player is to click on
+              the bug to catch it. Each successful catch increments the score
+              and decreases the hopping interval, making it more difficult to
+              catch the bug. To reset the game's difficulty level, the player
+              can click the "Reset Speed" button, which restores the initial
+              hopping interval. Additionally, the player can reset the score by
+              clicking the "Reset Score" button to start the game again from
+              scratch.
+            </p>
+          </div>
+          <div>
+            <br />
+            <img src="project3.png" alt="property3" width="350" height="240" />
+          </div>
+          <div>
+            <h2>Product Website</h2>
+            <p>
+              Creating product details, including a logo, banner, description,
+              and price.
+            </p>
+          </div>
+        </div>
+      </main>
 
-      <div class="project">
-        <img src="project1.jpg" alt="Project 1" />
-        <h3>Project 1</h3>
-        <p>
-          Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Duis auctor urna sit amet erat consequat, eget aliquam elit auctor.
-          Integer vitae iaculis est.
-        </p>
-        <p>Role: Lorem ipsum dolor sit amet</p>
-        <p>Outcome: Lorem ipsum dolor sit amet</p>
-      </div>
-
-      <div class="project">
-        <img src="project2.jpg" alt="Project 2" />
-        <h3>Project 2</h3>
-        <p>
-          Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Duis auctor urna sit amet erat consequat, eget aliquam elit auctor.
-          Integer vitae iaculis est.
-        </p>
-        <p>Role: Lorem ipsum dolor sit amet</p>
-        <p>Outcome: Lorem ipsum dolor sit amet</p>
-      </div>
-
-      <div class="project">
-        <img src="project3.jpg" alt="Project 3" />
-        <h3>Project 3</h3>
-        <p>
-          Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Duis auctor urna sit amet erat consequat, eget aliquam elit auctor.
-          Integer vitae iaculis est.
-        </p>
-        <p>Role: Lorem ipsum dolor sit amet</p>
-        <p>Outcome: Lorem ipsum dolor sit amet</p>
-      </div>
       <%- include('partials/footer.ejs') %>
     </div>
   </body>

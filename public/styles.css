@@ -47,3 +47,9 @@ label {
     text-align: left;
     clear: both;
 }
+
+.projects_container {
+    display: grid;
+    grid-template-columns: 400px 600px;
+    grid-template-rows: 280px 280px 280px;
+}
