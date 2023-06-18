@@ -30,10 +30,13 @@ router.get('/', ensureAuthenticated, async (req, res) => {
 });
 
 // Logout Handle
-router.get('/logout', (req, res) => {
-  req.logout();
-  req.flash('success_msg', 'You are logged out.');
-  res.redirect('/users/login');
+router.post('/logout', (req, res) => {
+  req.session.destroy(function(err){
+    if (err) {
+      console.log(err);
+    }
+    res.redirect('/users/login');
+  })
 });
 
 // Update contact
