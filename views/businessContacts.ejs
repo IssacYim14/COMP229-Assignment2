@@ -8,15 +8,16 @@
     <div id="allPage">
       <%- include('partials/header.ejs') %>
       <h1>Business Contact</h1>
-      <form action="/users/logout" method="POST">
+      <form action="/businessContacts/logout" method="POST">
         <button type="submit">Log Out</button>
       </form>
       <table>
         <thead>
           <tr>
-            <th>Contact Name</th>
-            <th>Contact Number</th>
-            <th>Email Address</th>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Email</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -25,11 +26,29 @@
             <td><%= contact.name %></td>
             <td><%= contact.number %></td>
             <td><%= contact.email %></td>
+            <td>
+              <!-- Update Button -->
+              <form
+                action="/businessContacts/<%= contact._id %>/update"
+                method="GET"
+                style="display: inline"
+              >
+                <button type="submit">Update</button>
+              </form>
+              <!-- Delete Button -->
+              <form
+                action="/businessContacts/<%= contact._id %>/delete"
+                method="POST"
+                style="display: inline"
+              >
+                <button type="submit">Delete</button>
+              </form>
+            </td>
           </tr>
           <% }) %>
         </tbody>
       </table>
-      <%-include('partials/footer.ejs') %>
+      <%- include('partials/footer.ejs') %>
     </div>
   </body>
 </html>

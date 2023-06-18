@@ -58,3 +58,18 @@ label {
     grid-template-columns: 400px 600px;
     grid-template-rows: 280px 280px 280px;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
