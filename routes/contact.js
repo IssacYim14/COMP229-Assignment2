@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     // dynamic change the title in ejs
-    res.render('contact', {title : 'Contact'});
+    res.render('contact');
 })
 
 module.exports = router;
