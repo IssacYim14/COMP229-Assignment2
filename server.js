@@ -16,6 +16,7 @@ app.use('/projects', require('./routes/projects'));
 app.use('/services', require('./routes/services'));
 app.use('/contact', require('./routes/contact'));
 app.use('/users', require('./routes/users'));
+app.use('/businessContacts', require('./routes/businessContacts'));
 
 app.listen(process.env.PORT || 3000,() => {
     console.log('server is listening on port 3000');
