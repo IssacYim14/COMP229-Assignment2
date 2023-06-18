@@ -4,10 +4,24 @@ Created by: Chun Wai Yim (Student #: 301242959) on 6/2/2023
 */
 
 const express = require('express');
+const expressLayouts = require('express-ejs-layouts');
+const mongoose = require('mongoose');
+const passport = require('passport');
+const flash = require('connect-flash');
+const session = require('express-session');
+
 const app = express();
 
 app.use(express.static('./public'))
 app.set('view engine', 'ejs');
+
+// DB config
+const db = require('./config/keys').MongoURI;
+
+//connect to Mongo
+mongoose.connect(db, { useNewUrlParser: true})
+    .then(() => console.log('MongoDb Connected..'))
+.catch(err => console.log(err))
 
 // express use routes
 app.use('/', require('./routes/home'));
