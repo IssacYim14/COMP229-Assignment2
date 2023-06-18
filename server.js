@@ -12,8 +12,11 @@ const session = require('express-session');
 
 const app = express();
 
+
+
 app.use(express.static('./public'))
 app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: false}));
 
 // DB config
 const db = require('./config/keys').MongoURI;
@@ -31,6 +34,19 @@ app.use('/services', require('./routes/services'));
 app.use('/contact', require('./routes/contact'));
 app.use('/users', require('./routes/users'));
 app.use('/businessContacts', require('./routes/businessContacts'));
+
+// Express session
+app.use(
+    session({
+      secret: 'secret',
+      resave: true,
+      saveUninitialized: true
+    })
+);
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.listen(process.env.PORT || 3000,() => {
     console.log('server is listening on port 3000');
