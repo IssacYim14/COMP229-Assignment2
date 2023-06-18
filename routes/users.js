@@ -5,11 +5,12 @@ const passport = require('passport');
 const User = require('../models/User');
 
 
-router.get('/login', (req, res) => 
-    res.render('login'));
 
 router.get('/register', (req, res) => 
     res.render('register'));
+
+router.get('/login', (req, res) => 
+res.render('login'));
 
 router.post('/register', async (req, res) => {
     try {
@@ -25,6 +26,7 @@ router.post('/register', async (req, res) => {
       res.redirect('/users/register');
     }
 });
+
 
 // Login Handle
 router.post('/login', (req, res, next) => {
