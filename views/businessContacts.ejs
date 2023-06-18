@@ -11,6 +11,24 @@
       <form action="/users/logout" method="POST">
         <button type="submit">Log Out</button>
       </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Contact Name</th>
+            <th>Contact Number</th>
+            <th>Email Address</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% contacts.forEach(contact => { %>
+          <tr>
+            <td><%= contact.name %></td>
+            <td><%= contact.number %></td>
+            <td><%= contact.email %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
       <%-include('partials/footer.ejs') %>
     </div>
   </body>

@@ -21,7 +21,6 @@ mongoose.connect(db, { useNewUrlParser: true})
     .then(() => console.log('MongoDb Connected..'))
 .catch(err => console.log(err))
 
-
 // Express session
 app.use(
     session({
