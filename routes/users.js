@@ -1,3 +1,8 @@
+/*
+File Name: users.js
+Created by: Chun Wai Yim (Student #: 301242959) on 6/18/2023
+*/
+
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
@@ -10,6 +15,7 @@ router.get('/register', (req, res) =>
 router.get('/login', (req, res) => 
 res.render('login'));
 
+// register handle
 router.post('/register', async (req, res) => {
     try {
       const hashedPassword = await bcrypt.hash(req.body.password, 10);

@@ -1,3 +1,8 @@
+/*
+File Name: passport.js
+Created by: Chun Wai Yim (Student #: 301242959) on 6/18/2023
+*/
+
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 const User = require('../models/User'); 
