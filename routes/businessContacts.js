@@ -36,4 +36,69 @@ router.get('/logout', (req, res) => {
   res.redirect('/users/login');
 });
 
+// Update contact
+router.get('/:id/update', ensureAuthenticated, async (req, res) => {
+    try {
+      // Find the contact by ID
+      const contact = await Contact.findById(req.params.id);
+  
+      if (!contact) {
+        return res.status(404).send('Contact not found');
+      }
+  
+      // Render the update form and pass the contact data
+      res.render('updateContact', { contact });
+    } catch (error) {
+      console.log(error);
+      res.status(500).send('Server Error');
+    }
+});
+
+// Handle contact update
+router.post('/:id/update', ensureAuthenticated, async (req, res) => {
+    try {
+      // Find the contact by ID
+      const contact = await Contact.findById(req.params.id);
+  
+      if (!contact) {
+        return res.status(404).send('Contact not found');
+      }
+  
+      // Update the contact data
+      contact.name = req.body.name;
+      contact.number = req.body.number;
+      contact.email = req.body.email;
+  
+      // Save the updated contact
+      await contact.save();
+  
+      // Redirect to the businessContacts page or any other desired route
+      res.redirect('/businessContacts');
+    } catch (error) {
+      console.log(error);
+      res.status(500).send('Server Error');
+    }
+});
+  
+// Handle contact deletion
+router.post('/:id/delete', ensureAuthenticated, async (req, res) => {
+    try {
+      // Find the contact by ID
+      const contact = await Contact.findById(req.params.id);
+  
+      if (!contact) {
+        return res.status(404).send('Contact not found');
+      }
+  
+      // Delete the contact
+      await Contact.deleteOne({ _id: req.params.id });
+  
+      // Redirect to the businessContacts page or any other desired route
+      res.redirect('/businessContacts');
+    } catch (error) {
+      console.log(error);
+      res.status(500).send('Server Error');
+    }
+  });
+
 module.exports = router;
