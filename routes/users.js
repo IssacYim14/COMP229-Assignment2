@@ -4,8 +4,6 @@ const bcrypt = require('bcryptjs');
 const passport = require('passport');
 const User = require('../models/User');
 
-
-
 router.get('/register', (req, res) => 
     res.render('register'));
 
@@ -37,11 +35,12 @@ router.post('/login', (req, res, next) => {
     })(req, res, next);
   });
 
-// Logout handle
+// Logout Handle
 router.post('/logout', (req, res) => {
     req.logout();
     req.flash('success_msg', 'You are logged out.');
-    res.redirect('/users/login')
-})
+    res.redirect('/users/login');
+  });
+  
 
 module.exports = router;

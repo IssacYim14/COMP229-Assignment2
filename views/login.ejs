@@ -1,13 +1,26 @@
-<h1>Log in</h1>
-<form action="/users/login" method="POST">
-  <div>
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required />
-  </div>
-  <div>
-    <label for="password">Password</label>
-    <input type="password" id="password" name="password" required />
-  </div>
-  <button type="submit">Login</button>
-</form>
-<a href="/users/register">Register</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Log in</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+  </head>
+  <body>
+    <div id="allPage">
+      <%- include('partials/header.ejs') %>
+      <h1>Log in</h1>
+      <form action="/users/login" method="POST">
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <a href="/users/register">Register</a>
+      <%-include('partials/footer.ejs') %>
+    </div>
+  </body>
+</html>
