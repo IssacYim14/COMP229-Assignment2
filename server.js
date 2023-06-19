@@ -4,10 +4,8 @@ Created by: Chun Wai Yim (Student #: 301242959) on 6/18/2023
 */
 
 const express = require('express');
-const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const passport = require('passport');
-const flash = require('connect-flash');
 const session = require('express-session');
 const initializePassport = require('./config/passport');
 
@@ -36,8 +34,6 @@ initializePassport(passport);
 // Passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.use(flash());
 
 app.use(express.static('./public'))
 app.set('view engine', 'ejs');
