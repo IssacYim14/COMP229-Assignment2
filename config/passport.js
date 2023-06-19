@@ -13,7 +13,7 @@ module.exports = function(passport) {
       User.findOne({ name: name })
         .then(user => {
           if (!user) {
-            return done(null, false, { message: 'Invalid name or password.' });
+            return done(null, false);
           }
 
           bcrypt.compare(password, user.password, (err, isMatch) => {
@@ -21,7 +21,7 @@ module.exports = function(passport) {
             if (isMatch) {
               return done(null, user);
             } else {
-              return done(null, false, { message: 'Invalid name or password.' });
+              return done(null, false);
             }
           });
         })

@@ -45,10 +45,6 @@ router.get('/:id/update', ensureAuthenticated, async (req, res) => {
       // Find the contact by ID
       const contact = await Contact.findById(req.params.id);
   
-      if (!contact) {
-        return res.status(404).send('Contact not found');
-      }
-  
       // Render the update form and pass the contact data
       res.render('updateContact', { contact });
     } catch (error) {
@@ -62,10 +58,6 @@ router.post('/:id/update', ensureAuthenticated, async (req, res) => {
     try {
       // Find the contact by ID
       const contact = await Contact.findById(req.params.id);
-  
-      if (!contact) {
-        return res.status(404).send('Contact not found');
-      }
   
       // Update the contact data
       contact.name = req.body.name;
@@ -88,10 +80,6 @@ router.post('/:id/delete', ensureAuthenticated, async (req, res) => {
     try {
       // Find the contact by ID
       const contact = await Contact.findById(req.params.id);
-  
-      if (!contact) {
-        return res.status(404).send('Contact not found');
-      }
   
       // Delete the contact
       await Contact.deleteOne({ _id: req.params.id });
