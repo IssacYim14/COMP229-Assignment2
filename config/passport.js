@@ -9,11 +9,11 @@ const User = require('../models/User');
 
 module.exports = function(passport) {
   passport.use(
-    new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
-      User.findOne({ email: email })
+    new LocalStrategy({ usernameField: 'name' }, (name, password, done) => {
+      User.findOne({ name: name })
         .then(user => {
           if (!user) {
-            return done(null, false, { message: 'Invalid email or password.' });
+            return done(null, false, { message: 'Invalid name or password.' });
           }
 
           bcrypt.compare(password, user.password, (err, isMatch) => {
@@ -21,7 +21,7 @@ module.exports = function(passport) {
             if (isMatch) {
               return done(null, user);
             } else {
-              return done(null, false, { message: 'Invalid email or password.' });
+              return done(null, false, { message: 'Invalid name or password.' });
             }
           });
         })
