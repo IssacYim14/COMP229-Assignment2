@@ -84,7 +84,7 @@ router.post('/:id/delete', ensureAuthenticated, async (req, res) => {
       // Delete the contact
       await Contact.deleteOne({ _id: req.params.id });
   
-      // Redirect to the businessContacts page or any other desired route
+      // Redirect to the businessContacts 
       res.redirect('/businessContacts');
     } catch (error) {
       console.log(error);
