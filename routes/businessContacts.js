@@ -7,7 +7,7 @@ const express = require('express');
 const router = express.Router();
 const Contact = require('../models/Contact'); // Import the Contact model
 
-// Add the middleware function to check authentication
+// check authentication
 const ensureAuthenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
@@ -15,7 +15,7 @@ const ensureAuthenticated = (req, res, next) => {
   res.redirect('/users/login');
 };
 
-// Display all contacts
+// Display contacts
 router.get('/', ensureAuthenticated, async (req, res) => {
   try {
     // Retrieve all contacts from the database
@@ -67,7 +67,7 @@ router.post('/:id/update', ensureAuthenticated, async (req, res) => {
       // Save the updated contact
       await contact.save();
   
-      // Redirect to the businessContacts page or any other desired route
+      // Redirect to businessContacts
       res.redirect('/businessContacts');
     } catch (error) {
       console.log(error);
